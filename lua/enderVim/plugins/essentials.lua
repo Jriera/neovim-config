@@ -10,28 +10,6 @@ return {
         end,
     },
 
-            
---[[	{
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-	   local tokyonight = require("tokyonight")
-	   	tokyonight.setup({
-		    style = "storm",
-		    transparent = false,
-		    terminal_colors = false,
-		    styles = {
-			    comments = { italic =true},
-			    keywords = { italic = true },
-			    sidebars = "dark",
-			    floats = "dark"
-		    }
-			    
-	    })
-	    tokyonight.load()
-    end
-    },]]--
 
 
     "nvim-lua/plenary.nvim",
