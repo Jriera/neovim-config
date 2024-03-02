@@ -12,26 +12,11 @@ return {
 
 
 
-    "nvim-lua/plenary.nvim",
-    {
-    "nvim-telescope/telescope.nvim", tag = '0.1.5',
-    dependencies = { { 'nvim-lua/plenary.nvim'},{ "BurntSushi/ripgrep"} },
-	cmd = "Telescope",
-  keys = {
-    { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-    { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-    { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
-    { "<leader>f/", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
-  },
-  config = true,
-    },
+    "lewis6991/gitsigns.nvim",
     "tpope/vim-fugitive",
+    "nvim-lua/plenary.nvim",
    -- "github/copilot.vim",
     "eandrju/cellular-automaton.nvim",
-    "telescope-fzf-native.nvim",
-    "nvim-telescope/telescope-fzf-writer.nvim",
     "nvim-tree/nvim-web-devicons",
     {
     "mbbill/undotree",
@@ -39,32 +24,13 @@ return {
             {"<leader>u", "<cmd>UndotreeToggle<cr>", desc = "toggle on/off" },
         }
     },
+    {
     "folke/trouble.nvim",
-  --[[  {
-        'nvim-tree/nvim-tree.lua',
-        version = "*",
-        lazy = false,
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-        },
-        config = function()
-        local tree = require("nvim-tree")
-        tree.setup({
-            sort = {
-                sorter = "case_sensitive",
-            },
-            view = {
-                width = 30
-            },
-            renderer = {
-                group_empty = true
-            },
-            filters = {
-                dotfiles = true
-            },
-        })
-        end
-    },]]--
+    dependencies = "nvim-tree/nvim-web-devicons",
+        opts = {
+            icons = true
+        }
+    },
     {
     "ThePrimeagen/harpoon",
         branch = "harpoon2",
