@@ -25,13 +25,6 @@ return {
         }
     },
     {
-    "folke/trouble.nvim",
-    dependencies = "nvim-tree/nvim-web-devicons",
-        opts = {
-            icons = true
-        }
-    },
-    {
     "ThePrimeagen/harpoon",
         branch = "harpoon2",
         dependencies = { "nvim-lua/plenary.nvim"},
