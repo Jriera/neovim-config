@@ -19,6 +19,7 @@ return {
     end
     },
     --[[{
+        Use this only when working with inline templates or jsx
         "elgiano/nvim-treesitter-angular",
         branch = "topic/jsx-fix"
     },]]--
