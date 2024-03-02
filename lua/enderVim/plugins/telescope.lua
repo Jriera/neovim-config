@@ -13,12 +13,15 @@ return {
              { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
              { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
              { "<leader>f/", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
-             { "<leader>vh", "<cmd>Telescope help_tags<cr>", desc = "Telescope_help_tags"}
+             { "<leader>vh", "<cmd>Telescope help_tags<cr>", desc = "Telescope_help_tags"},
+             { "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Telescope find string"}
             },
             config = function()
                require("telescope").setup({
                defaults = {
-                file_ignore_patterns = {"node_modules/*", "/generator/"}
+                    --many of the ignore patterns below are related to DxC Silo software, 
+                    --to avoid most of their unrelated files in angular projects
+                file_ignore_patterns = {"node_modules/*", "**/generator/*", "**/Borradores/*"}
                 } 
             })
             end
