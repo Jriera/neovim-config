@@ -12,10 +12,10 @@ return {
 
 
 
-    "lewis6991/gitsigns.nvim",
     "tpope/vim-fugitive",
+    "lewis6991/gitsigns.nvim",
     "nvim-lua/plenary.nvim",
-   -- "github/copilot.vim",
+    "github/copilot.vim",
     "eandrju/cellular-automaton.nvim",
     "nvim-tree/nvim-web-devicons",
     {
