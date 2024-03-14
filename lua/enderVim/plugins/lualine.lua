@@ -1,84 +1,61 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  event = "VeryLazy",
-  init = function()
-    vim.g.lualine_laststatus = vim.o.laststatus
-    if vim.fn.argc(-1) > 0 then
-      -- set an empty statusline till lualine loads
-      vim.o.statusline = " "
-    else
-      -- hide the statusline on the starter page
-      vim.o.laststatus = 0
-    end
-  end,
-  opts = function()
-    -- PERF: we don't need this lualine require madness 🤷
-    local lualine_require = require("lualine_require")
-    lualine_require.require = require
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "VeryLazy",
+		config = function()
+
+			local function truncate_branch_name(branch)
+				if not branch or branch == "" then
+					return ""
+				end
+
+				-- Match the branch name to the specified format
+				local user, team, ticket_number = string.match(branch, "^(%w+)/(%w+)%-(%d+)")
+
+				-- If the branch name matches the format, display {user}/{team}-{ticket_number}, otherwise display the full branch name
+				if ticket_number then
+					return user .. "/" .. team .. "-" .. ticket_number
+				else
+					return branch
+				end
+			end
 
 
-    vim.o.laststatus = vim.g.lualine_laststatus
-
-    return {
-      options = {
-        theme = "auto",
-        icons_enabled = true,
-        globalstatus = true,
-        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
-      },
-      sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch", "diff", "diagnostics"},
-
-        lualine_c = {
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          { "filename"}
-        },
-        lualine_x = {
-          -- stylua: ignore
-          {
-            function() return require("noice").api.status.command.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-          },
-          -- stylua: ignore
-          {
-            function() return require("noice").api.status.mode.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-          },
-          -- stylua: ignore
-          {
-            function() return "  " .. require("dap").status() end,
-            cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
-          },
-          {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-          },
-          {
-            "diff",
-            source = function()
-              local gitsigns = vim.b.gitsigns_status_dict
-              if gitsigns then
-                return {
-                  added = gitsigns.added,
-                  modified = gitsigns.changed,
-                  removed = gitsigns.removed,
-                }
-              end
-            end,
-          },
-        },
-        lualine_y = {
-          { "progress", separator = " ", padding = { left = 1, right = 0 } },
-          { "location", padding = { left = 0, right = 1 } },
-        },
-        lualine_z = {
-          function()
-            return " " .. os.date("%R")
-          end,
-        },
-      },
-      extensions = { "neo-tree", "lazy" },
-    }
-  end,
+			require("lualine").setup({
+				options = {
+					theme = "tokyonight",
+					globalstatus = true,
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "█", right = "█" },
+				},
+				sections = {
+					lualine_b = {
+						{ "branch", icon = "", fmt = truncate_branch_name },
+						"diff",
+						"diagnostics",
+					},
+					lualine_c = {
+						{ "filename", path = 1 },
+					},
+					lualine_x = {
+                        {
+						"filetype",
+                        icons_enabled = true,
+                        }
+					},
+                    lualine_y = {
+                        {
+                            "fileformat",
+                            icons_enabled = true,
+                        }
+                    },
+                    lualine_z = {
+                        function()
+                        return " " .. os.date("%R")
+                        end,
+                    },
+				},
+			})
+		end,
+	},
 }
