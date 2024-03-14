@@ -15,6 +15,15 @@ return {
             config.angularls.setup({
                 filetypes = { "angular", "html", "typescript", "typescriptreact" }
             })
+            config.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" }
+                        }
+                    }
+                }
+            })
         end
   },
         
