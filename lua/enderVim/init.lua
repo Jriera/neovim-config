@@ -2,8 +2,8 @@ require("enderVim.remap")
 require("enderVim.nvim-tree-config")
 require("enderVim.lazy")
 require("enderVim.config")
-print("hello from ender")
 require("harpoon").setup()
+require("enderVim.autocmds")
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
@@ -57,5 +57,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 ---End Setup for LSP
---
-
