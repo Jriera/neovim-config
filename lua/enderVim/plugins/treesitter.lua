@@ -4,7 +4,7 @@ return {
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-            ensure_installed = { "vimdoc", "javascript","typescript","lua", "rust","html", "css", "scss" },
+            ensure_installed = { "vimdoc", "javascript","typescript","lua", "rust","html", "css", "scss" , "markdown", "markdown_inline"},
             sync_install = false,
             auto_install = true,
             indent = {
@@ -12,9 +12,8 @@ return {
             },
             highlight = {
                 enable = true,
-                additional_vim_regex_highlighting = false,
+                additional_vim_regex_highlighting = {"markdown"},
             }
-            
         })
     end
     },
@@ -24,6 +23,5 @@ return {
         branch = "topic/jsx-fix"
     },]]--
     "nvim-treesitter-angular"
-    
 }
 
