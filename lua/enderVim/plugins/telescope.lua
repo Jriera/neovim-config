@@ -21,8 +21,8 @@ return {
                defaults = {
                     --many of the ignore patterns below are related to DxC Silo software, 
                     --to avoid most of their unrelated files in angular projects
-                file_ignore_patterns = {"node_modules/*", "**/generator/*", "**/Borradores/*"}
-                } 
+                file_ignore_patterns = {"node_modules/*", "**/generator/*", "**/Borradores/*", "**/dist/*", "**/build/*", "**/coverage","**/node-oracledb/*"}
+                }
             })
             end
     },
