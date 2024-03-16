@@ -13,7 +13,7 @@ return {
                 ensure_installed = { "lua_ls", "rust_analyzer" , "angularls"},
             })
             config.angularls.setup({
-                filetypes = { "angular", "html", "typescript", "typescriptreact" }
+                filetypes = { "angular", "html", "typescript", "typescriptreact", "angular.html"}
             })
             config.lua_ls.setup({
                 settings = {
@@ -26,7 +26,6 @@ return {
             })
         end
   },
-        
 }
 
 
