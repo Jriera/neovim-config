@@ -5,6 +5,8 @@ vim.keymap.set("n", "lg", vim.cmd.LazyGit)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<leader>p", "\"_dP") -- paste without updating register with the deketed text
+vim.keymap.set("n", "C-d", "C-dzz") -- move down half a page and center the cursor
+vim.keymap.set("n", "C-u", "C-uzz") -- move up half a page and center the cursor
 --[[Motions to learn, and later decide if remap is necessary
 -- ciw - change inner word
 -- ci" - change inner quote
@@ -24,7 +26,6 @@ vim.keymap.set("v", "<leader>p", "\"_dP") -- paste without updating register wit
 -- yiw - yank inner word
 -- etc 
 --
--- vim.keymap.set("v", "<leader>p", "\"_dP") -- paste without updating register with the deketed text
 -- vim.keymap.set("n", "C-d", "C-dzz") -- move down half a page and center the cursor
 -- vim.keymap.set("n", "C-u", "C-uzz") -- move up half a page and center the cursor
 -- dap - delete a paragraph (including leading/trailing empty lines)
