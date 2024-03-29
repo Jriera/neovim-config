@@ -1,14 +1,13 @@
 return {
     {
         "nvim-telescope/telescope.nvim", tag = '0.1.5',
-            dependencies = { 
+            dependencies = {
                 { 'nvim-lua/plenary.nvim'},
                 { "BurntSushi/ripgrep"}
             },
             cmd = "Telescope",
             keys = {
              { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-             { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
              { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
              { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
              { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
