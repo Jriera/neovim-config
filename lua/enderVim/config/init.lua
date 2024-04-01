@@ -1,12 +1,3 @@
---require("enderVim.config.autocmds")
------ HELPER ----
-local scopes = { o = vim.o, b = vim.bo, w = vim.wo }
-local function opt(scope,key, value)
-    scopes[scope][key] = value
-    if scope ~= 'o'then scopes['o'] = value end
-end
-
--------
 
 local indent = 4
 vim.o.formatoptions = "jcqnt"
@@ -30,7 +21,7 @@ vim.opt.number = true
 vim.opt.pumblend = 10
 vim.opt.pumheight = 10
 vim.opt.relativenumber = true
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 vim.opt.shiftround = true
 vim.opt.shiftwidth = indent
