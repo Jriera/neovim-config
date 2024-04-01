@@ -41,5 +41,6 @@ vim.opt.timeoutlen = 300
 vim.opt.undofile = true
 vim.opt.updatetime = 200
 vim.opt.wrap = false
+vim.opt.incsearch = true
 -- opt('o', 'termguicolors', true)
 -- vim.opt.clipboard = "unnamedplus" this synchronizes the system clipboard with the buffer clipboard
