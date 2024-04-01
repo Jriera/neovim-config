@@ -1,3 +1,4 @@
+return {}
 --[[local icons_by_filename = {
   [".babelrc"] = {
     icon = "",

@@ -10,7 +10,7 @@ return {
         local config = require("lspconfig")
         require('mason').setup()
         require('mason-lspconfig').setup({
-                ensure_installed = { "lua_ls", "rust_analyzer" , "angularls"},
+                ensure_installed = { "lua_ls", "angularls"},
             })
             config.angularls.setup({
                 filetypes = { "angular", "html", "typescript", "typescriptreact", "angular.html"}
@@ -23,6 +23,9 @@ return {
                         }
                     }
                 }
+            })
+            config.eslint.setup({
+                filetypes = { "javascript",  "typescript"  }
             })
         end
   },
