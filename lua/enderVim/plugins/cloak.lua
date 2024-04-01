@@ -13,6 +13,7 @@ return {
 					".env*",
 					"wrangler.toml",
 					".dev.vars",
+                    "config.fish"
 				},
 				cloak_pattern = "=.+"
 			},
