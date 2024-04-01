@@ -16,13 +16,16 @@ return {
             },
             on_colors = function(colors)
                 colors.hint = colors.orange
-                colors.bg = "#011627"
+                colors.bg = "#000b14"
             end,
             on_highlights = function(hi)
                 hi.Function = { fg = "#82AAFF" }
                 hi["Type"] = { fg = "#9d7cd8" }
-                hi["@keyword"] = { fg = "#b701b4", style = { italic = true } }
+                hi["@keyword"] = { fg = "#ff7afc", style = { italic = true } }
+                hi["@variable"] = { fg = "#C3E88D", style = { italic = true } }
+                hi["@variable.member"] = { fg = "#C3E88D", style = { italic = true } }
                 hi.String = { fg = "#ecc48d", style = { italic = true } }
+                hi["lsp.type.decorator"] = { fg = "#82AAFF", style = { italic = true } }
                 hi["lsp.type.decorator"] = { fg = "#82AAFF", style = { italic = true } }
                 -- floating menu styles cmp
                 hi["PmenuSel"] = { bg = "#282C34", fg = "NONE" }
